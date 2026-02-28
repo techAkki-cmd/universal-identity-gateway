@@ -20,14 +20,16 @@ This system was intentionally designed to protect user identity.
 1. **Anonymous Tokens**  
    The JWT contains **no personal information**.  
    It only includes:
-   - `sub` → an anonymous UUID
-   - `scopes` → namespaces the entity is allowed to access
+
+   a. `sub` → an anonymous UUID  
+   b. `scopes` → namespaces the entity is allowed to access  
 
 2. **UUID Stamping**  
    When data is ingested:
-   - The token is verified.
-   - The anonymous UUID is extracted.
-   - That UUID is attached to the incoming data record.
+
+   a. The token is verified  
+   b. The anonymous UUID is extracted  
+   c. That UUID is attached to the incoming data record  
 
 3. **Fully Decoupled Identity**  
    Downstream systems (databases, analytics services, etc.) can group data by this UUID —  
@@ -69,8 +71,8 @@ http://localhost:8000
 
 You can test the ingestion endpoint in two ways:
 
-- Using the interactive Swagger UI (recommended for quick visual testing)
-- Using terminal-based `curl` commands
+a. Using the interactive Swagger UI (recommended for quick visual testing)
+b. Using terminal-based `curl` commands
 
 Both approaches demonstrate how the same endpoint can handle both flat and deeply nested JSON payloads without predefined schemas.
 
@@ -86,9 +88,9 @@ FastAPI automatically generates interactive API documentation.
    ```
 
 2. Generate a Token:
-   - Scroll to `POST /auth/token`
-   - Click **Try it out**
-   - Use:
+   a. Scroll to `POST /auth/token`
+   b. Click **Try it out**
+   c. Use:
 
 ```json
 {
@@ -100,12 +102,12 @@ FastAPI automatically generates interactive API documentation.
 3. Copy the `access_token` from the response.
 
 4. Click the **Authorize** button at the top of the page.
-   - Paste the token
-   - Click **Authorize**
+   a. Paste the token
+   b. Click **Authorize**
 
 5. Scroll to `POST /data/ingest`
-   - Click **Try it out**
-   - Test with either of the example payloads below.
+   a. Click **Try it out**
+   b. Test with either of the example payloads below.
 
 ---
 

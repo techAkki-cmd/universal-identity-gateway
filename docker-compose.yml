@@ -7,6 +7,5 @@ services:
     ports:
       - "8000:8000"
     restart: unless-stopped
-    # Environment variables hum yahan pass kar sakte hain
     environment:
       - ENVIRONMENT=production

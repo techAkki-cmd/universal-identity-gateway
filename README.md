@@ -109,6 +109,45 @@ FastAPI automatically generates interactive API documentation.
    a. Click **Try it out**
    b. Test with either of the example payloads below.
 
+#### Example 1: Simple Data Point (Database Scope)
+
+```json
+{
+  "source_namespace": "Database",
+  "metric_category": "biometric_log",
+  "timestamp": "2026-02-28T12:00:00Z",
+  "payload": {
+    "heart_rate_bpm": 75
+  }
+}
+```
+
+---
+
+#### Example 2: Complex Nested Object (Service Scope)
+
+Notice how the exact same endpoint handles deeply nested arrays dynamically.
+
+```json
+{
+  "source_namespace": "service",
+  "metric_category": "engine_diagnostics",
+  "timestamp": "2026-02-28T12:05:00Z",
+  "payload": {
+    "device_status": "online",
+    "metadata": {
+      "firmware": "v2.1",
+      "calibration_required": false
+    },
+    "sensor_readings": [
+      {"id": "s1", "temps": [45.2, 46.1, 44.8]},
+      {"id": "s2", "temps": [39.1, 40.0, 41.2]}
+    ]
+  }
+}
+```
+   
+
 ---
 
 ## Method B — Testing via Terminal (curl)

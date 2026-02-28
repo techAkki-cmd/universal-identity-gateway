@@ -174,7 +174,7 @@ curl -X POST http://localhost:8000/data/ingest \
 
 ---
 
-## What This Project Demonstrates
+## Features
 
 - Stateless API architecture  
 - JWT-based Zero-Trust authentication  

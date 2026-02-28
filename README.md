@@ -171,6 +171,15 @@ curl -X POST http://localhost:8000/data/ingest \
     }
   }'
 ```
+### Step 4 — View the Ingested Data (Server Logs)
+
+The API returns a clean success response to the client, but the actual processing — including the anonymous UUID stamping — happens inside the gateway container.
+
+To see the final processed records, check the container logs:
+
+```bash
+docker logs universal-identity-gateway
+```
 
 ---
 
